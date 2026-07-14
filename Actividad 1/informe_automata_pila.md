@@ -48,3 +48,34 @@ La importancia del Autómata de Pila se entiende mejor al compararlo con los Aut
 *   **Lenguajes que reconocen:** Mientras que los AFD y AFND solo pueden reconocer **Lenguajes Regulares** (aquellos que pueden ser descritos mediante expresiones regulares, donde no se requiere memoria para "contar" o emparejar de forma arbitraria), los Autómatas de Pila pueden reconocer **Lenguajes Libres de Contexto (LLC)**.
 *   **La Limitación de los AFD/AFND:** Un AFD/AFND no puede recordar cantidades arbitrarias de información. Por ejemplo, no puede recordar si vio $n$ cantidades de 'a' para luego exigir $n$ cantidades de 'b', porque requeriría infinitos estados para representar cada valor posible de $n$.
 *   **El Salto Cualitativo del AP:** La adición de la pila provee memoria infinita controlada. Esto permite resolver problemas de emparejamiento, recursividad y anidamiento. Todo lenguaje regular puede ser reconocido por un autómata de pila (simplemente ignorando la pila), pero no todo lenguaje libre de contexto puede ser reconocido por un AFD/AFND. Por lo tanto, el AP representa el siguiente nivel en la Jerarquía de Chomsky, siendo indispensable para definir los lenguajes de programación modernos que poseen reglas sintácticas complejas.
+
+---
+
+## 5. Documentación de la Solución de Software
+
+Como parte de esta actividad, se ha construido un programa que simula un Autómata de Pila básico. A continuación, se detallan los aspectos técnicos de esta solución, cumpliendo con los requerimientos de la entrega:
+
+### Descripción del Programa
+El programa construido (`automata_pila.py`) implementa la clase `AutomataDePila` configurada específicamente para reconocer el lenguaje $L = \{a^n b^n \mid n \ge 0\}$.
+Este script simula las transiciones de estado y las operaciones de memoria (apilar y desapilar) carácter por carácter. Incluye un método `procesar_cadena(cadena)` que determina si una cadena dada es aceptada o rechazada, imprimiendo en consola el paso a paso del procesamiento, el estado de la pila y el veredicto final.
+
+### Tecnología y Herramientas Utilizadas
+*   **Lenguaje de Programación:** Python 3.x
+*   **Paradigma:** Programación Orientada a Objetos (POO). Se encapsuló la lógica y los datos (estado actual, pila) en una clase.
+*   **Herramientas:** Cualquier editor de código (VS Code, Sublime Text, etc.) y la terminal/consola del sistema operativo para la ejecución. No se requirieron librerías de terceros.
+
+### Detalle de Instalación
+Dado que el programa es un script de Python estándar utilizando únicamente la biblioteca estándar, no requiere de una instalación compleja ni gestión de dependencias externas.
+Los pasos previos son:
+1.  Verificar que se tiene instalado **Python 3** en el sistema. Se puede descargar desde la [página oficial de Python](https://www.python.org/downloads/).
+2.  Descargar o clonar el archivo `automata_pila.py` del repositorio entregado.
+
+### Detalle de Ejecución
+Para probar y ejecutar el simulador del autómata de pila, se deben seguir estos pasos:
+1.  Abra una terminal o línea de comandos (Símbolo del sistema, PowerShell, Git Bash, etc.).
+2.  Navegue utilizando el comando `cd` hasta el directorio donde se encuentra guardado el archivo `automata_pila.py`.
+3.  Ejecute el script escribiendo el siguiente comando:
+    ```bash
+    python automata_pila.py
+    ```
+4.  Al ejecutarse, el programa correrá automáticamente el bloque de pruebas definido al final del archivo. Este evaluará una serie de casos de prueba válidos (ej. `"aabb"`) e inválidos (ej. `"abb"`), mostrando por consola cada símbolo leído, la acción sobre la pila y si la cadena fue **ACEPTADA** o **RECHAZADA**.
