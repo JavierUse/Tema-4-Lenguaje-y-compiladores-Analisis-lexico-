@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# ---------------------------------------------------------------------------
+# analizador_dockerfile
+# Ejecutable de línea de comandos del lexer de Dockerfiles.
+# Es un wrapper que invoca el intérprete de Python sobre el código fuente
+# lexer_dockerfile.py, de modo que el usuario pueda ejecutarlo como un
+# binario cualquiera: ./analizador_dockerfile <archivo>
+# ---------------------------------------------------------------------------
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$DIR/../src/lexer_dockerfile.py" "$@"
