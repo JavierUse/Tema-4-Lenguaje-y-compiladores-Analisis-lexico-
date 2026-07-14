@@ -1,0 +1,42 @@
+=== Análisis léxico de: ejemplos/ejemplo3_con_errores.dockerfile ===
+
+TOKEN: IMAGE_TAG        Lexema: ubuntu:22.04                   (línea 2, columna 6)
+TOKEN: INSTRUCTION      Lexema: RUN                            (línea 4, columna 1)
+TOKEN: IDENTIFIER       Lexema: echo                           (línea 4, columna 5)
+TOKEN: STRING_DOUBLE    Lexema: "hola mundo"                   (línea 4, columna 10)
+TOKEN: AND_OP           Lexema: &&                             (línea 4, columna 23)
+TOKEN: IDENTIFIER       Lexema: apt-get                        (línea 4, columna 26)
+TOKEN: IDENTIFIER       Lexema: update                         (línea 4, columna 34)
+TOKEN: AND_OP           Lexema: &&                             (línea 4, columna 41)
+TOKEN: IDENTIFIER       Lexema: apt-get                        (línea 4, columna 44)
+TOKEN: IDENTIFIER       Lexema: install                        (línea 4, columna 52)
+TOKEN: FLAG             Lexema: -y                             (línea 4, columna 60)
+TOKEN: IDENTIFIER       Lexema: curl                           (línea 4, columna 63)
+TOKEN: INSTRUCTION      Lexema: ENV                            (línea 6, columna 1)
+TOKEN: ASSIGN           Lexema: RUTA=                          (línea 6, columna 5)
+TOKEN: VARIABLE         Lexema: $RUTA                          (línea 6, columna 10)
+TOKEN: PATH             Lexema: /usr/local/bin                 (línea 6, columna 16)
+TOKEN: INSTRUCTION      Lexema: LABEL                          (línea 8, columna 1)
+TOKEN: IDENTIFIER       Lexema: vers                           (línea 8, columna 7)
+TOKEN: ASSIGN           Lexema: ion=                           (línea 8, columna 12)
+TOKEN: STRING_DOUBLE    Lexema: "1.0"                          (línea 8, columna 16)
+TOKEN: INSTRUCTION      Lexema: EXPOSE                         (línea 10, columna 1)
+TOKEN: NUMBER           Lexema: 80                             (línea 10, columna 8)
+TOKEN: NUMBER           Lexema: 81                             (línea 10, columna 11)
+TOKEN: INSTRUCTION      Lexema: CMD                            (línea 12, columna 1)
+TOKEN: LBRACKET         Lexema: [                              (línea 12, columna 5)
+TOKEN: STRING_DOUBLE    Lexema: "python"                       (línea 12, columna 6)
+TOKEN: COMMA            Lexema: ,                              (línea 12, columna 14)
+TOKEN: STRING_DOUBLE    Lexema: "app.py"                       (línea 12, columna 16)
+TOKEN: RBRACKET         Lexema: ]                              (línea 12, columna 24)
+
+--- Se encontraron 4 error(es) léxico(s) ---
+ERROR LÉXICO: 'FORM' en línea 2, columna 1 -> instrucción Docker no reconocida (¿error de escritura?)
+ERROR LÉXICO: ':' en línea 6, columna 15 -> carácter no reconocido por el alfabeto del lenguaje
+ERROR LÉXICO: '~' en línea 8, columna 11 -> carácter no reconocido por el alfabeto del lenguaje
+ERROR LÉXICO: '!' en línea 10, columna 10 -> carácter no reconocido por el alfabeto del lenguaje
+
+RESULTADO: El archivo Dockerfile CONTIENE ERRORES LÉXICOS.
+
+Total de tokens reconocidos: 29
+Total de errores léxicos:   4
